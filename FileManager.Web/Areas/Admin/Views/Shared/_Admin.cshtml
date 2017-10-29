@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title>@ViewBag.Title - Admin | FileManager</title>
+     <link href="~/Content/styles/fonts.css" rel="stylesheet" />
+     <link href="~/Content/styles/bootstrap.min.css" rel="stylesheet" />
+     <link href="~/Content/styles/myglyphicons2.css" rel="stylesheet" />
+     <link href="~/Content/styles/font-awesome.css" rel="stylesheet" />
+     <link href="~/Content/styles/animate.css" rel="stylesheet" />
+     <link href="~/Content/styles/site.css" rel="stylesheet" />
+</head>
+<body>
+     <header>
+          <div class="container-fluid">
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <h1>
+                         <span class="fa fa-files-o"></span>
+                         <a href="/Admin">File<span>Manager</span> Admin</a>
+                    </h1>
+               </div>
+
+               <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <ul class="nav nav-pills text-right">
+                         <li>
+                              <a href="/Admin"><span class="glyphicons glyphicons-dashboard"></span> Dashboard</a>
+                         </li>
+                         <li>
+                              <a class="text-success" href="/Admin/Approvals/"><span class="fa fa-check-square"></span> Approvals</a>
+                         </li>
+                         <li>
+                              <a class="text-danger" href="/Admin/Files/"><span class="fa fa-files-o"></span> Files</a>
+                         </li>
+                         <li>
+                              <a class="text-danger" href="/Admin/Downloads/"><span class="fa fa-cloud-download"></span> Downloads</a>
+                         </li>
+                         <li>
+                              <a class="text-info" href="/Admin/Histories/"><span class="fa fa-history"></span> Histories</a>
+                         </li>
+                         <li>
+                              <a class="text-primary" href="/Admin/Users/"><span class="fa fa-group"></span> Users</a>
+                         </li>
+                    </ul>
+               </div>
+
+               <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 text-right">
+
+                    <div class="btn-group dropdown">
+                         <span class="btn glyphicons glyphicons-user dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="accountDD"></span>
+
+                         <ul class="dropdown-menu" aria-labelledby="accountDD">
+                              <li>
+                                   <a href="#"> <span class="glyphicons glyphicons-nameplate"></span> @Html.Partial("_LoginPartial")</a>
+                              </li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#"><span class="glyphicons glyphicons-stats"></span> Report</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> Help</a></li>
+                              <li><a href="#"><span class="glyphicons glyphicons-shield"></span> Change Password</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="javascript:document.getElementById('logoutForm').submit()">Log Off</a></li>
+                         </ul>
+
+                    </div>
+               </div>
+          </div>
+     </header>
+
+     <section>
+          @RenderBody()
+     </section>
+
+     <footer>
+          <div class="container-fluid">
+               <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                    <p>&copy; @DateTime.Now.Year. all rights reserved. iShopManager</p>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 text-right">
+                    <p>
+                         Powered by <label>iShop<span>Manager</span></label>
+                    </p>
+               </div>
+          </div>
+     </footer>
+
+     <script src="~/Content/scripts/jquery-3.2.1.min.js"></script>
+     <script src="~/Content/scripts/bootstrap.min.js"></script>
+     <script src="~/Content/scripts/myScripts.js"></script>
+     <script src="~/Content/scripts/wow.min.js"></script>
+     <script>
+          var wow = new WOW(
+               {
+                    boxClass: 'wow',      // animated element css class (default is wow)
+                    animateClass: 'animated', // animation css class (default is animated)
+                    offset: 0,          // distance to the element when triggering the animation (default is 0)
+                    mobile: true,       // trigger animations on mobile devices (default is true)
+                    live: true,       // act on asynchronously loaded content (default is true)
+                    callback: function (box) {
+                         // the callback is fired every time an animation is started
+                         // the argument that is passed in is the DOM node being animated
+                    },
+                    scrollContainer: null // optional scroll container selector, otherwise use window
+               }
+          );
+          wow.init();
+     </script>
+     @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+     {
+          @Html.AntiForgeryToken()
+     }
+</body>
+</html>

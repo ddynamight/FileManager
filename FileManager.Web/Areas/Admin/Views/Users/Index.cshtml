@@ -1,0 +1,90 @@
+﻿@model IEnumerable<FileManager.Model.AppUser>
+
+@{
+     ViewBag.Title = "Users";
+}
+
+
+<div id="listHeader">
+     <div class="container-fluid">
+          @using (Html.BeginForm("Index", "Users", FormMethod.Get, new { @class = "container-fluid" }))
+          {
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <h2 class="text-primary">
+                         <span class="fa fa-group"></span> Users
+                         <label class="badge">@Model.Count()</label>
+                    </h2>
+                    <p>users accounts </p>
+               </div>
+
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+
+               </div>
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+          }
+     </div>
+</div>
+
+
+
+<div id="listCon">
+     <div class="container-fluid">
+          <table class="table table-condensed table-hover table-striped table-bordered table-responsive">
+               <thead>
+                    <tr>
+                         <th>
+                              S/N
+                         </th>
+                         <th>
+                              Fullname
+                         </th>
+                         <th>
+                              Email Address
+                         </th>
+                         <th>
+                              Username
+                         </th>
+                         <th>
+                              Date Registered
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach (var item in Model.OrderBy(e => e.Firstname))
+               {
+                         <tr>
+                              <td></td>
+                              <td>
+                                   <strong>
+                                        @item.Firstname @item.Lastname
+                                   </strong>
+                              </td>
+                              <td>
+                                   @item.Email
+                              </td>
+                              <td>
+                                   @item.UserName
+                              </td>
+                              <td>
+                                   @item.DateReg.ToLongDateString()
+                              </td>
+                         </tr>
+                    }
+               </tbody>
+
+
+
+          </table>
+     </div>
+</div>

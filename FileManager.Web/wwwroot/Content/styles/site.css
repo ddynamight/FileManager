@@ -1,0 +1,427 @@
+﻿body, header, section, aside, article, div, footer, nav, h1, h2, h3, h4, h5, h6, p, ul, ol, li, a, span, hr {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(230, 230, 230, 1);
+    clear: both;
+    font-family: 'Segoe UI';
+    width: 100%;
+}
+
+/* Header Section Styles
+----------------------------------------------*/
+header
+{
+    background-color: rgba(255, 255, 255, 1);
+    border-bottom: 1px solid rgba(0, 180, 255, 1);
+    box-shadow: 1px 3px 1px rgba(50, 50, 50, 0.5);
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    min-height: 80px;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    z-index: 999;
+}
+
+/* Header Name and Logo Section Styles
+----------------------------------------------*/
+
+header .container-fluid div[class*=col-] h1 {
+    font-size: 2.5em;
+    padding: 0.5em 0.7em;
+}
+
+header .container-fluid div[class*=col-] h1 span {
+    color: rgba(0, 180, 255, 1);
+}
+
+header .container-fluid div[class*=col-] h1 a {
+    color: rgba(100, 100, 100, 1);
+    text-decoration: none;
+}
+
+header .container-fluid div[class*=col-] h1 a span {
+    color: rgba(0, 180, 255, 1);
+}
+
+header .container-fluid div[class*=col-] h1:hover a {
+    font-weight: 900;
+}
+
+/* Header Nav Section Styles
+----------------------------------------------*/
+
+header .container-fluid div[class*=col] ul {
+	float: right;
+	padding-top: 1.5em;
+}
+
+header .container-fluid div[class*=col] ul li a {
+    /*color: rgba(0, 180, 255, 1);*/
+	font-size: 1.2em;
+}
+
+
+header .container-fluid div[class*=col-] div {
+    text-align: left;
+}
+
+header .container-fluid div[class*=col-] div span {
+    color: rgba(0, 180, 255, 1);
+    font-size: 1.5em;
+    margin: 1.1em 0 0 0;
+}
+
+header .container-fluid div[class*=col-] div ul {
+    float: left;
+    left: -130px;
+    padding: 0;
+    text-align: left;
+    width: auto;
+}
+
+header .container-fluid div[class*=col-] div ul li a span {
+    color: rgba(0, 180, 255, 1);
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0.2em 0;
+}
+
+
+/* Content Section Styles
+----------------------------------------------*/
+section {
+    clear: both;
+    float: right;
+    height: auto;
+    margin-top: 100px;
+    min-height: 500px;
+    padding: 0.7em 0;
+    position: relative;
+    width: 100%;
+}
+
+/* Dashboard Section Styles
+----------------------------------------------*/
+
+section #dashHeader {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    height: auto;
+    margin: 0 0 2em 0;
+    min-height: 50px;
+    padding: 1em 0;
+    width: 100%;
+}
+
+section #dashHeader .container-fluid h2 {
+    color: rgba(0, 180, 255, 1);
+    font-size: 1.8em;
+}
+
+
+section #dashboardCon {
+    clear: both;
+    height: auto;
+    margin: 2em 0 0 0;
+    min-height: 400px;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#summary {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.7em;
+    clear: both;
+    height: auto;
+    margin-bottom: 1.5em;
+    min-height: 200px;
+    padding: 0.7em 0;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#summary div[class*=col-] div {
+    min-height: 180px;
+    text-align: center;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#summary div[class*=col-] div h2 {
+    clear: both;
+    color: rgba(50, 50, 50, 1);
+    font-size: 5em;
+    font-weight: 900;
+    padding: 0.5em 0 0 0;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#summary div[class*=col-] div h4 {
+    clear: both;
+    color: rgba(100, 100, 100, 1);
+    font-size: 1.5em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav {
+    clear: both;
+    height: auto;
+    margin-bottom: 1.5em;
+    min-height: 150px;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav div[class*=col-] a {
+    clear: both;
+    height: auto;
+    min-height: 180px;
+    padding: 1.2em;
+    text-align: center;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav div[class*=col-] a span {
+    clear: both;
+    font-size: 6.5em;
+    padding: 0.2em 0.2em 0 0.2em;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav div[class*=col-] a:hover span {
+    opacity: 0.5;
+    font-size: 6.0em;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav div[class*=col-] a label {
+    clear: both;    
+    font-size: 1.1em;
+    padding-top: 0.2em;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#nav div[class*=col-] a:hover label {
+    font-size: 1.5em;
+    font-weight: 900;
+}
+
+
+section #dashboardCon .container-fluid div[class*=col-] div#salesTickerCon {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.7em;
+    clear: both;
+    height: auto;
+    margin-bottom: 2em;
+    min-height: 180px;
+    padding: 0.7em;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#salesTickerCon h2 {
+    border-bottom: 1px solid rgba(92, 184, 92, 1);
+    clear: both;
+    color: rgba(92, 184, 92, 1);
+    font-size: 1.5em;
+    font-weight: 900;
+    padding: 0.2em;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+
+/*section #dashboardCon .container-fluid div[class*=col-] div#productTickerCon:value {
+    content: "\E453";
+    font-family: 'Glyphicons Regular';
+}*/
+
+section #dashboardCon .container-fluid div[class*=col-] div#productTickerCon {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.7em;
+    clear: both;
+    height: auto;
+    margin-bottom: 2em;
+    min-height: 180px;
+    padding: 0.7em;
+    width: 100%;
+}
+
+
+section #dashboardCon .container-fluid div[class*=col-] div#productTickerCon h2 {
+    border-bottom: 1px solid #D9534F;
+    clear: both;
+    color: #D9534F;
+    font-size: 1.5em;
+    font-weight: 900;
+    padding: 0.2em;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Inner Create Section Styles
+----------------------------------------------*/
+
+section #createHeader {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    height: auto;
+    min-height: 100px;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+section #createHeader .container-fluid {
+    text-align: center;
+}
+
+section #createHeader .container-fluid h2 {
+    clear: both;
+    font-size: 1.8em;
+    font-weight: 900;
+    padding: 0.2em 0;
+    width: 100%;
+}
+
+section #createHeader .container-fluid p {
+    color: rgba(100, 100, 100, 1);
+    font-size: 1.2em;
+}
+
+section #createCon {
+    clear: both;
+    height: auto;
+    min-height: 300px;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+section #createCon .container-fluid form {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 1em;
+    height: auto;
+    min-height: 200px;
+    padding: 1em;
+}
+
+section #createCon .container-fluid form .form-group {
+    width: 95%;
+}
+
+section #createCon .container-fluid form p {
+    clear: both;
+    float: left;
+    padding: 0.7em;
+    width: 100%;
+}
+
+
+/* Inner List Section Styles
+----------------------------------------------*/
+section #listHeader {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    height: auto;
+    margin-bottom: 1em;
+    min-height: 100px;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+section #listHeader .container-fluid {
+
+}
+
+section #listHeader .container-fluid h2 {
+    clear: both;
+    font-size: 1.8em;
+    font-weight: 900;
+    padding: 0.2em 0;
+    width: 100%;
+}
+
+section #listHeader .container-fluid p {
+    color: rgba(100, 100, 100, 1);
+    font-size: 1.2em;
+}
+
+section #listHeader .container-fluid form.container-fluid div[class*=col-] label.description {
+    clear: both;
+    font-size: 1.1em;
+    font-weight: 500;
+    margin: 0 0 0.5em 0;
+    width: 100%;
+}
+
+
+
+section #listCon {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    height: auto;
+    min-height: 400px;
+    padding: 1.5em 0;
+    width: 100%;
+}
+
+
+section #listCon table tr td {
+    font-weight: 700;
+    max-width: 500px;
+    text-wrap: normal;
+}
+
+section #listCon table tr td img {
+    height: 80px;
+    width: 80px;
+}
+
+section #listCon table tr td p {
+    clear: both;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+    text-wrap: normal;
+}
+
+section #listCon .container-fluid table tbody tr {
+  counter-increment: rowNumber;
+}
+
+section #listCon .container-fluid table tbody tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+
+/* Footer Section Styles
+----------------------------------------------*/
+footer {
+    background-color: rgba(255, 255, 255, 1);
+    border-top: 1px solid rgba(0, 127, 255, 1);
+    clear: both;
+    height: auto;
+    min-height: 20px;
+    padding: 0.7em 0;
+    width: 100%;
+}
+
+footer .container-fluid div[class*=col] p {
+    color: rgba(50, 50, 50, 1);
+    font-size: 1.0em;
+    font-weight: 700;
+}
+
+footer .container-fluid div[class*=col] p a {
+    text-decoration: none;
+}
+
+footer .container-fluid div[class*=col] p img {
+    max-height: 45px;
+}
+
+footer .container-fluid div[class*=col] p label {
+    color: rgba(100, 100, 100, 1);
+}
+
+footer .container-fluid div[class*=col] p label span {
+    color: rgba(0, 127, 255, 1);
+}

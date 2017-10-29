@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+     <title>@ViewBag.Title | FileManager</title>
+     <link rel="shortcut icon" href="/Content/images/favicon.ico" type="image/x-icon" />
+     <link href="~/Content/Styles/fonts.css" rel="stylesheet" />
+     <link href="~/Content/Styles/bootstrap.min.css" rel="stylesheet" />
+     <link href="~/Content/Styles/jquery-ui-1.8.18.custom.css" rel="stylesheet" />
+     <link href="~/Content/Styles/account.css" rel="stylesheet" />
+
+     <script src="~/Content/Scripts/jquery-1.10.1.min.js"></script>
+     <script src="~/Content/Scripts/bootstrap.min.js"></script>
+     <script src="~/Content/Scripts/jquery-ui-1.8.18.custom.min.js"></script>
+</head>
+<body>
+     <header>
+          <div class="container-fluid">
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <h1>
+                         <span class="glyphicons glyphicons-shop"></span>
+                         <a href="@Url.Action("Index", "Home")">File<span>Manager</span></a>
+                    </h1>
+                    <p>...helping you make informed decision</p>
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+               </div>
+          </div>
+     </header>
+     <section>
+          <div class="container-fluid">
+               <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
+
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    @RenderBody()
+               </div>
+               <div class="col-lg-4 col-md-4 col-sm-3 col-xs-12">
+
+               </div>
+          </div>
+     </section>
+</body>
+</html>

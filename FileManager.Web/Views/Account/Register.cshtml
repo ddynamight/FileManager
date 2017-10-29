@@ -1,0 +1,57 @@
+﻿@model RegisterViewModel
+@{
+     ViewData["Title"] = "Register";
+     Layout = "_Account";
+}
+
+@using (Html.BeginForm())
+{
+     @Html.AntiForgeryToken()
+     @Html.ValidationSummary(true)
+
+     <div class="form-group">
+          <label for="emailTb">@Html.LabelFor(model => model.Email) <span class="glyphicon glyphicon-question-sign"></span></label>
+
+          @Html.TextBoxFor(model => model.Email, new { @class = "form-control input-lg text-center", id = "emailTb", placeholder = "Enter your email address", type = "email" })
+          <span class="badge">@Html.ValidationMessageFor(model => model.Email) </span>
+     </div>
+
+     <div class="form-group">
+          <label for="firstnameTb">@Html.LabelFor(model => model.Firstname) <span class="glyphicon glyphicon-question-sign"></span></label>
+
+          @Html.TextBoxFor(model => model.Firstname, new { @class = "form-control input-lg text-center", id = "firstnameTb", placeholder = "Enter your Firstname", type = "text" })
+          <span class="badge">@Html.ValidationMessageFor(model => model.Firstname) </span>
+     </div>
+
+     <div class="form-group">
+          <label for="lastnameTb">@Html.LabelFor(model => model.Lastname) <span class="glyphicon glyphicon-question-sign"></span></label>
+
+          @Html.TextBoxFor(model => model.Lastname, new { @class = "form-control input-lg text-center", id = "lastnameTb", placeholder = "Enter your Lastname", type = "text" })
+          <span class="badge">@Html.ValidationMessageFor(model => model.Lastname) </span>
+     </div>
+
+     <div class="form-group">
+          <label for="passwordTb">@Html.LabelFor(model => model.Password) <span class="glyphicon glyphicon-question-sign"></span></label>
+
+          @Html.TextBoxFor(model => model.Password, new { @class = "form-control input-lg text-center", id = "passwordTb", placeholder = "Enter your desired password", type = "password" })
+
+          <span class="badge">@Html.ValidationMessageFor(model => model.Password) </span>
+     </div>
+
+     <div class="form-group">
+          <label for="conPasswordTb">@Html.LabelFor(model => model.ConfirmPassword) <span class="glyphicon glyphicon-question-sign"></span></label>
+
+          @Html.TextBoxFor(model => model.ConfirmPassword, new { @class = "form-control input-lg text-center", id = "conPasswordTb", placeholder = "Confirm your desired password", type = "password" })
+
+          <span class="badge">@Html.ValidationMessageFor(model => model.ConfirmPassword) </span>
+     </div>
+
+     <p>
+          <button class="btn btn-lg btn-primary">Register Now</button>
+     </p>
+
+}
+
+<div>
+     <p>Already own an account? <a href="/Account/Login">Log On Here</a> </p>
+</div>

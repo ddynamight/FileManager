@@ -1,0 +1,234 @@
+﻿main #innerBanner {
+     background-attachment: fixed;
+     background-image: url('/Content/images/innerBanner.png');
+     background-position: center top;
+     background-repeat: no-repeat;
+     border-bottom: 1px solid rgba(0, 0, 0, 1);
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 20vh;
+     width: 100%;
+}
+
+main #innerBanner .container-fluid {
+    display: block;
+    position: relative;
+    text-align: center;
+}
+
+main #innerBanner .container-fluid h2 {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 2.5em;
+    margin: auto;
+    padding: 1.5em 0;
+    text-transform: uppercase;
+}
+
+main #innerBanner .container-fluid h2 span {
+    font-size: 2.25em;
+}
+
+
+
+main #innerBanner .container-fluid p {
+    color: rgba(255, 255, 255, 1);
+    font-family: inderRegular;
+    font-size: 1.2em;
+    font-style: italic;
+    padding: 0 0 0.5em 0;
+}
+
+
+
+.bg-unique {
+    background-color: rgba(0, 92, 7, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique {
+    background-color: rgba(0, 92, 7, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+
+main #breadCrumb
+{
+     background-color: rgba(0, 92, 7, 1);
+     clear: both;
+     color: rgba(200, 200, 200, 1);
+     margin: 0;
+     min-height: 2vh;
+     padding: 0.5em 0;
+     width: 100%;
+}
+
+
+main #breadCrumb .container-fluid p
+{
+     font-family: inderRegular;
+     font-size: 1em;
+     padding: 0 1.5em;
+}
+
+
+main #breadCrumb .container-fluid p a
+{
+     color: rgba(255, 255, 255, 1);
+     text-decoration: none;
+}
+
+
+
+
+main #innerCon
+{
+     clear: both;
+     height: auto;
+     margin: 0;
+     min-height: 40vh;
+     padding: 2em 0;
+     width: 100%;
+}
+
+main #innerCon .container-fluid > div > h2
+{
+     background-color: rgba(255, 255, 255, 1);
+     clear: both;
+     color: rgba(0, 92, 7, 1);
+     font-family: inderRegular;
+     font-size: 2em;
+     margin: 1em 0;
+     padding: 0.5em;
+}
+
+main #innerCon .container-fluid div[class*=col] > h2
+{
+     background-color: rgba(0, 92, 7, 1);
+     color: rgba(255, 255, 255, 1);
+     font-family: inderRegular;
+     font-size: 1.5em;
+     margin: 0;
+     padding: 0.5em;
+}
+
+main #innerCon .container-fluid div[class*=col] > div
+{
+     background-color: rgba(255, 255, 255, 1);
+     border-bottom: 2px solid rgba(100, 100, 100, 1);
+     margin-bottom: 1em;
+     padding: 1.5em;
+}
+
+
+main #innerCon .container-fluid div[class*=col] h4
+{
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.5em;
+     margin: 0;
+     padding: 0 0 1.5em 0;
+}
+
+main #innerCon .container-fluid div[class*=col] h5
+{
+     clear: both;
+     font-family: inderRegular;
+     font-size: 1.25em;
+     margin: 0;
+     padding: 0 0 0.5em 0;
+}
+
+
+main #innerCon .container-fluid div[class*=col] > div p
+{
+     display: block;
+     font-size: 1.1em;
+     padding: 0 0 0.5em 0;
+     text-align: justify;
+}
+
+main #innerCon .container-fluid div[class*=col] > div > a
+{
+     clear: both;
+     color: rgba(255, 255, 255, 1);
+     display: block;
+     font-family: inderRegular;
+     font-size: 1.1em;
+     padding: 0.5em;
+     text-align: center;
+     text-decoration: none;
+     text-transform: uppercase;
+}
+
+main #innerCon .container-fluid div[class*=col] > div:nth-child(odd) > a
+{
+     background-color: rgba(0, 92, 7, 1);
+}
+
+main #innerCon .container-fluid div[class*=col] > div:nth-child(even) > a
+{
+     background-color: rgba(127, 255, 0, 1);
+     color: rgba(50, 50, 50, 1);
+}
+
+
+main #innerCon .container-fluid div[class*=col] form
+{
+     clear: both;
+     padding: 0 1em;
+}
+
+main #innerCon .container-fluid div[class*=col] form label
+{
+     font-size: 1.2em;
+     padding: 0.075em;
+}
+
+main #innerCon .container-fluid div[class*=col] form input
+{
+     border: 1px solid rgba(0, 92, 7, 1);
+     border-radius: 0;
+     font-size: 1.2em;
+     height: 2.5em;
+}
+
+main #innerCon .container-fluid div[class*=col] form select
+{
+     border: 1px solid rgba(0, 92, 7, 1);
+     border-radius: 0;
+     font-size: 1.2em;
+     padding: 1.5em;
+}
+
+main #innerCon .container-fluid div[class*=col] form button
+{
+     border: 1px solid rgba(0, 92, 7, 1);
+     border-radius: 0;
+     font-size: 1.2em;
+     padding: 1.25em;
+     width:100%;
+}
+
+
+main #innerCon .container-fluid div[class*=col] form p
+{
+     font-size: 1.1em;
+     width:100%;
+}
+
+main #innerCon .container-fluid div[class*=col] form p a
+{
+     color: rgba(0, 92, 7, 1);
+     font-family: inderRegular;
+     font-size: 1.1em;
+     text-decoration: none;
+     width:100%;
+}

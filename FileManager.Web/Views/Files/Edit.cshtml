@@ -1,0 +1,56 @@
+﻿@model FileManager.Model.File
+
+@{
+     ViewBag.Title = "Add File";
+}
+
+
+<div id="createHeader">
+     <div class="container-fluid">
+          <h2 class="text-danger">
+               <span class="fa fa-file"></span> Edit File
+          </h2>
+          <p class="text-">*all fields are required, kindly fill appropriately</p>
+     </div>
+</div>
+
+
+<div id="createCon">
+     <div class="container-fluid">
+
+          @using (Html.BeginForm("Edit", "Files", FormMethod.Post, new { enctype = "multipart/form-data", @class = "container-fluid" }))
+          {
+               @Html.AntiForgeryToken()
+               @Html.ValidationSummary(true)
+
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group text-danger">
+                         <label for="nameTb">File Name <span class="fa fa-file"></span></label>
+                         @Html.TextBoxFor(model => model.Name, new { type = "text", @class = "form-control input-lg", id = "nameTb", placeholder = "File Name e.g. Assessment Document" })
+                    </div>
+               </div>
+               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group text-danger">
+                         <label for="lockCb">File Access Status <span class="fa fa-check"></span></label>
+                         @Html.CheckBoxFor(model => model.IsLocked, new { @class = "form-control input-lg", id = "lockCb" })
+                    </div>
+               </div>
+
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+
+                    <div class="form-group text-danger">
+                         <label for="file">File to Upload  <span class="glyphicons glyphicons-picture"></span></label>
+                         <input class="form-control input-lg" id="file" name="file" type="file" />
+                    </div>
+               </div>
+
+               <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <p>
+                         <button type="submit" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-floppy-save"></span> Add File</button>
+                    </p>
+               </div>
+          }
+
+     </div>
+</div>

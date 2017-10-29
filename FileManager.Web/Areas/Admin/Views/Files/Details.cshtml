@@ -1,0 +1,18 @@
+﻿@model FileManager.Model.File
+
+@{
+     ViewBag.Title = Model.Name;
+}
+
+<div id="listHeader">
+     <div class="container-fluid text-center">
+          <h2>@Model.Name : @Model.FileUrl</h2>
+          <h4>Owner: @Model.AppUser.Firstname @Model.AppUser.Lastname</h4>
+     </div>
+</div>
+
+<div id="listCon">
+     <div class="container-fluid">
+
+     </div>
+</div>

@@ -1,0 +1,386 @@
+﻿body, header, section, article, aside, div, img, h1, h2, h3, h4, h5, h6, p, a, hr
+{
+	margin: 0;
+	padding: 0;
+}
+
+
+body
+{
+    background-color: rgba(225, 225, 225, 1);
+	clear: both;
+    display: flex;
+	font-family: inderRegular;
+	width: 100%;
+}
+
+body#home aside nav > a#home,
+body#clients aside nav > a#clients,
+body#projects aside nav > a#projects,
+body#tickets aside nav > a#tickets,
+body#orders aside nav > a#orders,
+body#products aside nav > a#products,
+body#payments aside nav > a#payments,
+body#users aside nav > a#users,
+body#users aside nav > a#users,
+body#quotes aside nav > a#quotes,
+body#jobs aside nav > a#jobs,
+body#blogs aside nav > a#blogs,
+body#settings aside nav > a#settings,
+body#staff aside nav > a#staff
+{
+    background-color: rgba(10, 10, 10, 0.5);
+}
+
+
+
+.bg-unique {
+    background-color: rgba(19, 104, 155, 1);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique {
+    background-color: rgba(19, 104, 155, 1);
+    border-color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 1);
+}
+
+.btn-unique:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+
+aside {
+    background-color: rgba(19, 104, 155, 1);
+    clear: left;
+    color: rgba(255, 255, 255, 1);
+    flex: 1;
+    float: left;
+    height: 100vh;
+    position: fixed;
+    z-index: 9999;
+}
+
+aside header {
+    clear: both;
+    height: auto;
+    min-height: 200px;
+    width: 100%;
+}
+
+aside header h1 {
+    clear: both;
+    font-size: 3em;
+    padding: 0.25em;
+}
+
+aside header h1 a {
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+aside header h1 a:hover {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+}
+
+aside header h1 a img {
+    max-height: 45px;
+}
+
+
+
+aside header div {
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    height: auto;
+    min-height: 100px;
+    padding: 0 0 1em 0;
+    text-align: center;
+}
+
+aside header div img {
+    clear: both;
+    max-height: 80px;
+}
+
+aside header div h2 {
+    clear: both;
+    font-family: inderRegular;
+    font-size: 1.25em;
+}
+
+aside header div h4 {
+    clear: both;
+    font-family: inderRegular;
+    font-size: 1.1em;
+    margin: 0 0 0.5em 0;
+}
+
+
+aside nav {
+    clear: both;
+    height: fill-available;
+}
+
+aside nav a {
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    display: block;
+    padding: 0.5em;
+    text-decoration: none;
+}
+
+aside nav a span {
+    padding: 0.25em;
+}
+
+aside nav a:hover {
+    background-color: rgba(10, 10, 10, 0.5);
+    color: rgba(255, 255, 255, 1);
+    text-decoration: none;
+}
+
+
+
+
+main {
+    flex: 5;
+    height: 100vh;
+    margin-left: 16%;
+    position: relative;
+}
+
+main nav {
+    background-color: rgba(200, 200, 200, 1);
+    border-bottom: 2px solid rgba(19, 104, 155, 0.5);
+    clear: both;
+    height: auto;
+    min-height: 50px;
+    width: 100%;
+}
+
+main nav a {
+    color: rgba(19, 104, 155, 1); 
+    font-size: 1.5em;
+    margin: 0 0.1em;
+    padding: 0.25em;
+    text-decoration: none;
+}
+
+main nav a span {
+    margin: 0.5em 0.25em;
+}
+
+main nav a:hover {
+    text-decoration: none;
+}
+
+
+
+main > div {
+    clear: both;
+    margin: 1em auto;
+    width: calc(100% - 5%);
+}
+
+
+
+
+main > div #dashCon {
+    clear: both;
+    width: 100%;
+}
+
+main > div #dashCon #dashboard {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    display: flex;
+    margin: 0 0 1em 0;
+    width: 100%;
+}
+
+main > div #dashCon #dashboard div {
+    border-left-width: 2px;
+    border-left-style: solid;
+    color: rgba(19, 104, 155, 1);
+    flex: 1;
+    height: auto;
+    min-height: 80px;
+    padding: 0.5em;
+}
+
+main > div #dashCon #dashboard div p {
+    clear: both;
+    font-size: 1.1em;
+    padding: 0 0.25em;
+}
+
+main > div #dashCon #dashboard div h2 {
+    clear: both;
+    font-size: 3em;
+    padding: 0 0.2em;
+}
+
+
+main > div #dashCon #dashboard div:nth-child(2n) {
+    color: rgba(255, 100, 199, 1);
+}
+
+main > div #dashCon #dashboard div:nth-child(3n) {
+    color: rgba(100, 199, 255, 1);
+}
+
+
+
+main > div #dashCon #tabCon ul.nav {
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+}
+
+main > div #dashCon #tabCon ul.nav li {
+    background-color: rgba(255, 255, 255, 1);
+    border: none;
+    font-family: inderRegular;
+    font-size: 1.25em;
+}
+
+main > div #dashCon #tabCon ul.nav li a {
+    border: none;
+    color: rgba(100, 100, 100, 1);
+}
+
+main > div #dashCon #tabCon ul.nav li.active a{
+    border-bottom: 2px solid rgba(19, 104, 155, 1);
+    color: rgba(19, 104, 155, 1);
+}
+
+
+main > div #dashCon #tabCon div.tab-content {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    height: auto;
+    min-height: 50vh;
+    padding: 1em;
+}
+
+
+
+
+main > div #dashCon #stats {
+  
+    clear: both;
+    display: flex;
+    height: auto;
+    margin: 2em auto;
+    min-height: 50vh;
+    padding: 0;
+    width: 100%;
+}
+
+main > div #dashCon #stats div {
+    flex: 1;
+}
+
+main > div #dashCon #stats div > div {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0.2em;
+    height: auto;
+    margin: 1em auto;
+    min-height: 400px;
+    width: calc(100% - 10%);
+}
+
+
+
+
+
+main > div #innerHeader {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    color: rgba(19, 104, 155, 1);   
+    height: auto;
+    margin: 0.5em 0;
+    min-height: 50px;
+    padding: 1em 0;
+    width: 100%;
+}
+
+main > div #innerHeader .container-fluid div[class*=col] a {
+    margin: 0.7em 0;
+}
+
+main > div #innerHeader .container-fluid div[class*=col] input[class*=sea] {
+    border: 1px solid rgba(19, 104, 155, 1);
+    font-family: inderRegular;
+    font-size: 1.25em; 
+    margin: 0.7em 0;
+    padding: 0.25em 0.5em;
+}
+
+
+
+
+
+main > div #innerCon {
+    background-color: rgba(255, 255, 255, 1);
+    clear: both;
+    color: rgba(19, 104, 155, 1);   
+    height: auto;
+    margin: 1.5em 0;
+    min-height: 200px;
+    padding: 0 0 2em 0;
+    width: 100%;
+}
+
+main > div #innerCon > h2 {
+    background-color: rgba(19, 104, 155, 1);
+    clear: both;
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.7em;
+    height: auto;
+    margin: 0 0 1.25em 0;
+    padding: 0.25em 0;
+    width: 100%;
+}
+
+
+main > div #innerCon .container-fluid {
+    padding-top: 2em;
+}
+
+main > div #innerCon .container-fluid table {
+    counter-reset: rowNumber;
+    margin: 1em 0;
+}
+
+main > div #innerCon .container-fluid table thead {
+    background-color: rgba(19, 104, 155, 1);
+    clear: both;
+    color: rgba(255, 255, 255, 1);    
+    height: auto;
+    padding: 0.5em 0;
+    width: 100%;
+}
+
+
+main > div #innerCon .container-fluid table tbody tr {
+  counter-increment: rowNumber;
+}
+
+main > div #innerCon .container-fluid table tbody tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+
+
+main > div #innerCon .container-fluid div[class*=col] img[class*=img] {
+    height: 100px;
+}
+
+main > div #innerCon .container-fluid div[class*=col] span[class*=img] {
+    font-size: 4em;
+    padding: 0.5em;
+}

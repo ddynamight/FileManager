@@ -1,0 +1,86 @@
+﻿@model IEnumerable<FileManager.Model.Download>
+
+@{
+     ViewBag.Title = "Downloads";
+}
+
+
+<div id="listHeader">
+     <div class="container-fluid">
+          @using (Html.BeginForm("Index", "Downloads", FormMethod.Get, new { @class = "container-fluid" }))
+          {
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <h2 class="text-danger">
+                         <span class="fa fa-download"></span> Downloads
+                         <label class="badge">@Model.Count()</label>
+                    </h2>
+                    <p>files downloaded</p>
+               </div>
+
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    
+               </div>
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+          }
+     </div>
+</div>
+
+
+
+<div id="listCon">
+     <div class="container-fluid">
+          <table class="table table-condensed table-hover table-striped table-bordered table-responsive">
+               <thead>
+                    <tr>
+                         <th>
+                              S/N
+                         </th>
+                         <th>
+                              Downloaded By
+                         </th>
+                         <th>
+                              <span class="fa fa-download"></span> File Downloaded
+                         </th>
+                         <th>
+                              <span class="fa fa-history"></span> Date Downloaded
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach (var item in Model.OrderByDescending(e => e.Date))
+               {
+                         <tr>
+                              <td>
+                                   
+                              </td>
+                              <td>
+                                   <strong>
+                                        @item.AppUser.Firstname @item.AppUser.Lastname
+                                   </strong>
+                              </td>
+                              <td>
+                                   @item.File.Name
+                              </td>
+                              <td>
+                                   @item.Date.ToLongDateString()
+                              </td>
+                         </tr>
+                    }
+               </tbody>
+
+
+
+          </table>
+     </div>
+</div>

@@ -1,0 +1,10 @@
+@using Microsoft.AspNetCore.Identity
+@using FileManager.Model
+
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+@if (User.Identity.IsAuthenticated)
+{
+    <text> @User.Identity.Name! </text>
+}

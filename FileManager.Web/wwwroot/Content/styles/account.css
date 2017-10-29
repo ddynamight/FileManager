@@ -1,0 +1,94 @@
+﻿body, header, section, article, aside, div, img, h1, h2, h3, h4, h5, h6, p, a, hr, ul, ol, li, table, tr, th, td, form, fieldset, legend, input
+{
+	margin: 0;
+	padding: 0;
+}
+
+/* RESET STYLES END HERE
+-------------------------------------------------------------*/
+
+body {
+    background-attachment: fixed;
+    background-color: rgba(240, 239, 240, 1);
+    background-image: url('/Content/images/accountBg.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI';
+    text-align: center;
+}
+
+
+header {
+    clear: both;
+    min-height: 80px;
+    padding: 3em 0 1.5em 0;
+    width: 100%;
+}
+
+header .container-fluid div[class*=col-] h1 {
+    font-size: 2.8em;
+    padding: 0 0 0.2em 0;
+}
+
+header .container-fluid div[class*=col-] h1 img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+header .container-fluid div[class*=col-] h1 a {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 100;
+    text-decoration: none;
+}
+
+header .container-fluid div[class*=col-] h1 a:hover {
+    font-weight: 900;
+}
+
+header .container-fluid div[class*=col-] h1 a span {
+    color: rgba(0, 136, 206, 1);
+}
+
+header .container-fluid div[class*=col-] p {
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.0em;
+    font-style: italic;
+    font-weight: 900;
+    padding: 0 1.5em;
+}
+
+
+section .container-fluid div[class*=col-] form {
+    padding-top: 0.5em;
+}
+
+section .container-fluid div[class*=col-] form label {
+    color: rgba(255, 255, 255, 1);
+}
+
+section .container-fluid div[class*=col-] input {
+    width: 100%;
+}
+
+section .container-fluid div[class*=col-] button {
+    width: 100%;
+}
+
+section .container-fluid div[class*=col-] div p {
+    color: rgba(255, 255, 255, 1);
+    clear: both;
+    font-size: 1.5em;
+    padding: 1em;
+}
+
+section .container-fluid div[class*=col-] div p a {
+    clear: both;
+    font-weight: 100;
+    text-decoration: none;
+}
+
+section .container-fluid div[class*=col-] div p a:hover {
+    font-weight: 900;
+}
+
+

@@ -1,0 +1,115 @@
+﻿/*FONTS STYLES
+=============================*/
+
+@font-face {
+	font-family: 'armwrestlerbold';
+	src: url('/Content/fonts/armwrestler-webfont.eot');
+	src: url('/Content/fonts/armwrestler-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/armwrestler-webfont.woff') format('woff'),
+		 url('/Content/fonts/armwrestler-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/armwrestler-webfont.svg#armwrestlerbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'capsuularegular';
+	src: url('/Content/fonts/capsuula-webfont.eot');
+	src: url('/Content/fonts/capsuula-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/capsuula-webfont.woff') format('woff'),
+		 url('/Content/fonts/capsuula-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/capsuula-webfont.svg#capsuularegular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'lemonregular';
+	src: url('/Content/fonts/lemon-regular-webfont.eot');
+	src: url('/Content/fonts/lemon-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/lemon-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/lemon-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/lemon-regular-webfont.svg#lemonregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'inderRegular';
+	src: url('/Content/fonts/inder-regular-webfont.eot');
+	src: url('/Content/fonts/inder-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/inder-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/inder-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/inder-regular-webfont.svg#inderregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'playballregular';
+	src: url('/Content/fonts/playball-regular-webfont.eot');
+	src: url('/Content/fonts/playball-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/playball-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/playball-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/playball-regular-webfont.svg#playballregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'source_sans_pro_lightregular';
+	src: url('/Content/fonts/sourcesanspro-light-webfont.eot');
+	src: url('/Content/fonts/sourcesanspro-light-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/sourcesanspro-light-webfont.woff') format('woff'),
+		 url('/Content/fonts/sourcesanspro-light-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/sourcesanspro-light-webfont.svg#source_sans_pro_lightregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'skranjiregular';
+	src: url('/Content/fonts/skranji-regular-webfont.eot');
+	src: url('/Content/fonts/skranji-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/skranji-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/skranji-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/skranji-regular-webfont.svg#skranjiregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'gochi_handregular';
+	src: url('/Content/fonts/gochihand-regular-webfont.eot');
+	src: url('/Content/fonts/gochihand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/gochihand-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/gochihand-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/gochihand-regular-webfont.svg#gochi_handregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'mr_dafoeregular';
+	src: url('/Content/fonts/mrdafoe-regular-webfont.eot');
+	src: url('/Content/fonts/mrdafoe-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/mrdafoe-regular-webfont.woff') format('woff'),
+		 url('/Content/fonts/mrdafoe-regular-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/mrdafoe-regular-webfont.svg#mr_dafoeregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/Content/fonts/segoeuil-webfont.eot');
+	src: url('/Content/fonts/segoeuil-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/Content/fonts/segoeuil-webfont.woff') format('woff'),
+		 url('/Content/fonts/segoeuil-webfont.ttf') format('truetype'),
+		 url('/Content/fonts/segoeuil-webfont.svg#segoeuil-webfont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}

@@ -1,0 +1,70 @@
+﻿@{
+     ViewData["Title"] = "Home";
+}
+
+<div id="dashHeader">
+     <div class="container-fluid">
+          <h2><span class="glyphicons glyphicons-list"></span> Dashboard </h2>
+     </div>
+</div>
+
+<div id="dashboardCon">
+     <div class="container-fluid">
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+               <div id="summary" class="wow fadeIn" data-wow-duration="1s" data-wow-delay="1s">
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
+                         <div class="img-circle bg-info">
+                              <h2>@ViewData["userCounter"]</h2>
+                              <h4>Users</h4>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
+                         <div class="img-circle bg-success">
+                              <h2>@ViewData["fileCounter"]</h2>
+                              <h4>Files</h4>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
+                         <div class="img-circle bg-primary">
+                              <h2>@ViewData["downloadCounter"]</h2>
+                              <h4>Downloads</h4>
+                         </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
+                         <div class="img-circle bg-danger">
+                              <h2>@ViewData["historyCounter"]</h2>
+                              <h4>History</h4>
+                         </div>
+                    </div>
+
+               </div>
+               <div id="nav">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="4s">
+                         <a class="btn-info img-circle img-thumbnail" href="#">
+                              <span class="fa fa-user-plus"></span>
+                              <label>Add User</label>
+                         </a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="4s">
+                         <a class="btn-info img-circle img-thumbnail" href="#">
+                              <span class="fa fa-sticky-note"></span>
+                              <label>Add File</label>
+                         </a>
+                    </div>
+               </div>
+          </div>
+          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+               <div id="salesTickerCon" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
+                    <h2><span class="glyphicons glyphicons-notes-2"></span> Latest File History </h2>
+               </div>
+
+               <div id="productTickerCon" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="3s">
+                    <h2><span class="glyphicons glyphicons-user"></span> Most Download Files </h2>
+               </div>
+          </div>
+     </div>
+</div>

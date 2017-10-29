@@ -1,0 +1,101 @@
+﻿@model IEnumerable<FileManager.Model.File>
+
+@{
+     ViewBag.Title = "Files";
+}
+
+
+<div id="listHeader">
+     <div class="container-fluid">
+          @using (Html.BeginForm("Index", "Files", FormMethod.Get, new { @class = "container-fluid" }))
+          {
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <h2 class="text-success">
+                         <span class="fa fa-files-o"></span> My Files
+                         <label class="badge">@Model.Count()</label>
+                    </h2>
+                    <p>my uploaded files </p>
+               </div>
+
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <a class="btn btn-success" href="/Files/Create"><span class="fa fa-upload"></span> Add Record </a>
+               </div>
+               <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+
+               <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+
+               </div>
+          }
+     </div>
+</div>
+
+
+
+<div id="listCon">
+     <div class="container-fluid">
+          <table class="table table-condensed table-hover table-striped table-bordered table-responsive">
+               <thead>
+                    <tr>
+                         <th>
+                              S/N
+                         </th>
+                         <th>
+                              File Name
+                         </th>
+                         <th>
+                              <span class="fa fa-download"></span> Downloads
+                         </th>
+                         <th>
+                              <span class="fa fa-history"></span> Changes
+                         </th>
+                    </tr>
+               </thead>
+               <tbody>
+                    @foreach (var item in Model.OrderBy(e => e.Name))
+               {
+                         <tr>
+                              <td>
+                                   <div class="btn-group">
+                                        <button type="button" class="btn btn-success">Select Action</button>
+                                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                             <span class="caret"></span>
+                                             <span class="sr-only">Toggle Dropdown</span>
+                                        </button>
+                                        <ul class="dropdown-menu">
+                                             <li><a href="/Files/Details/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> View Records </a> </li>
+                                             <li role="separator" class="divider"></li>
+                                             <li><a href="/Files/Edit/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Records </a> </li>
+                                             <li role="separator" class="divider"></li>
+                                             <li><a href="/Files/Delete/@item.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete File </a> </li>
+                                             <li role="separator" class="divider"></li>
+                                             <li><a href="~/UserFiles/@item.FileUrl"><span class="fa fa-download"></span> Download File </a> </li>
+                                        </ul>
+                                   </div>
+                              </td>
+                              <td>
+                                   <strong>
+                                        @item.Name
+                                   </strong>
+                              </td>
+                              <td>
+                                   @item.Downloads.Count
+                              </td>
+                              <td>
+                                   @item.Histories.Count
+                              </td>
+                         </tr>
+                    }
+               </tbody>
+
+               
+
+          </table>
+     </div>
+</div>
