@@ -18,7 +18,7 @@ namespace FileManager.Web.Areas.Admin.Controllers
 
           public async Task<IActionResult> Index()
           {
-               return View(await db.Files.Include(e => e.AppUser).ToListAsync());
+               return View(await db.UserFiles.Include(e => e.File).Include(e => e.AppUser).ToListAsync());
           }
 
           [HttpGet("Create")]
@@ -30,9 +30,10 @@ namespace FileManager.Web.Areas.Admin.Controllers
           [HttpPost("Create")]
           public async Task<IActionResult> Create(File modelFile, IFormFile file)
           {
+               var user = await db.AppUsers.SingleAsync(e => e.UserName.Equals(User.Identity.Name));
 
                modelFile.Date = DateTime.Now;
-               modelFile.AppUser = await db.AppUsers.SingleAsync(e => e.UserName.Equals(User.Identity.Name));
+               modelFile.UserFiles = user.UserFiles;
 
                if (ModelState.IsValid)
                {
@@ -49,13 +50,13 @@ namespace FileManager.Web.Areas.Admin.Controllers
           [HttpGet("Details/{tag}")]
           public async Task<IActionResult> Details(string tag)
           {
-               return View(await db.Files.Include(e => e.AppUser).Include(e => e.Downloads).Include(e => e.Histories).SingleAsync(e => e.Tagname.Equals(tag)));
+               return View(await db.Files.Include(e => e.UserFiles).Include(e => e.Downloads).Include(e => e.Histories).SingleAsync(e => e.Tagname.Equals(tag)));
           }
 
           [HttpGet("Edit/{tag}")]
           public async Task<IActionResult> Edit(string tag)
           {
-               return View(await db.Files.Include(e => e.AppUser).Include(e => e.Downloads).Include(e => e.Histories).SingleAsync(e => e.Tagname.Equals(tag)));
+               return View(await db.Files.Include(e => e.UserFiles).Include(e => e.Downloads).Include(e => e.Histories).SingleAsync(e => e.Tagname.Equals(tag)));
           }
 
           protected override void Dispose(bool disposing)

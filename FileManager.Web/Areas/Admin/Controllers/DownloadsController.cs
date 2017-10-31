@@ -17,7 +17,7 @@ namespace FileManager.Web.Areas.Admin.Controllers
 
           public async Task<IActionResult> Index()
           {
-               return View(await db.Downloads.Include(e => e.File).ThenInclude(e => e.AppUser).ToListAsync());
+               return View(await db.Downloads.Include(e => e.File).ThenInclude(e => e.UserFiles).ToListAsync());
           }
 
           protected override void Dispose(bool disposing)

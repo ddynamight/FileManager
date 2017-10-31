@@ -53,7 +53,16 @@
           </div>
           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                <div id="salesTickerCon" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="2s">
-                    <h2><span class="glyphicons glyphicons-notes-2"></span> Latest File History </h2>
+                    <h2><span class="fa fa-refresh"></span> Notifications </h2>
+
+                    <ul>
+                         @foreach(var item in (FileManager.Model.Notification[])ViewData["indexNotify"])
+                         {
+                              <li>
+                                   <a href="/Notifications/Details/@item.Id">@item.Message</a> 
+                              </li>
+                         }
+                    </ul>
                </div>
 
                <div id="productTickerCon" class="wow fadeInRight" data-wow-duration="1s" data-wow-delay="3s">

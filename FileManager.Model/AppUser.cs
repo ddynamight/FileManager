@@ -9,9 +9,9 @@ namespace FileManager.Model
           public AppUser()
           {
                Downloads = new HashSet<Download>();
-               Files = new HashSet<File>();
                Histories = new HashSet<History>();
                Notifications = new HashSet<Notification>();
+               UserFiles = new HashSet<UserFile>();
           }
 
           public string Firstname { get; set; }
@@ -20,8 +20,8 @@ namespace FileManager.Model
 
           //One AppUser to Many Relationship
           public virtual ICollection<Download> Downloads { get; set; }
-          public virtual ICollection<File> Files { get; set; }
           public virtual ICollection<History> Histories { get; set; }
           public virtual ICollection<Notification> Notifications { get; set; }
+          public virtual ICollection<UserFile> UserFiles { get; set; }
      }
 }

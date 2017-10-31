@@ -128,7 +128,6 @@ namespace FileManager.Model.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     FileUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsLocked = table.Column<bool>(type: "bit", nullable: false),
@@ -138,8 +137,25 @@ namespace FileManager.Model.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Files", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Notifications",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Action = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    Date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsRead = table.Column<bool>(type: "bit", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Notifications", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Files_AppUser_AppUserId",
+                        name: "FK_Notifications_AppUser_AppUserId",
                         column: x => x.AppUserId,
                         principalTable: "AppUser",
                         principalColumn: "Id",
@@ -202,6 +218,30 @@ namespace FileManager.Model.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "UserFiles",
+                columns: table => new
+                {
+                    AppUserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FileId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserFiles", x => new { x.AppUserId, x.FileId });
+                    table.ForeignKey(
+                        name: "FK_UserFiles_AppUser_AppUserId",
+                        column: x => x.AppUserId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserFiles_Files_FileId",
+                        column: x => x.FileId,
+                        principalTable: "Files",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Downloads_AppUserId",
                 table: "Downloads",
@@ -213,11 +253,6 @@ namespace FileManager.Model.Migrations
                 column: "FileId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Files_AppUserId",
-                table: "Files",
-                column: "AppUserId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Histories_AppUserId",
                 table: "Histories",
                 column: "AppUserId");
@@ -225,6 +260,16 @@ namespace FileManager.Model.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Histories_FileId",
                 table: "Histories",
+                column: "FileId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Notifications_AppUserId",
+                table: "Notifications",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserFiles_FileId",
+                table: "UserFiles",
                 column: "FileId");
         }
 
@@ -255,10 +300,16 @@ namespace FileManager.Model.Migrations
                 name: "Histories");
 
             migrationBuilder.DropTable(
-                name: "Files");
+                name: "Notifications");
+
+            migrationBuilder.DropTable(
+                name: "UserFiles");
 
             migrationBuilder.DropTable(
                 name: "AppUser");
+
+            migrationBuilder.DropTable(
+                name: "Files");
         }
     }
 }

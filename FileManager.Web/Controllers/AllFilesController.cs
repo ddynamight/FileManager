@@ -17,7 +17,7 @@ namespace FileManager.Web.Controllers
 
           public async Task<IActionResult> Index()
           {
-               return View(db.Files.Include(e => e.AppUser).Where(e => e.IsLocked.Equals(false)));
+               return View(db.UserFiles.Include(e => e.AppUser).Include(e => e.File).Where(e => e.File.IsLocked.Equals(false)));
           }
 
           protected override void Dispose(bool disposing)

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FileManager.Model.File>
+﻿@model IEnumerable<FileManager.Model.UserFile>
 
 @{
      ViewBag.Title = "All Files";
@@ -61,7 +61,7 @@
                     </tr>
                </thead>
                <tbody>
-                    @foreach (var item in Model.OrderBy(e => e.Name))
+                    @foreach (var item in Model.OrderBy(e => e.File.Date))
                {
                          <tr>
                               <td>
@@ -72,27 +72,27 @@
                                              <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                             <li><a href="/Files/Edit/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Records </a> </li>
+                                             <li><a href="/Files/Edit/@item.File.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Records </a> </li>
                                              <li role="separator" class="divider"></li>
-                                             <li><a href="/Files/Delete/@item.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete File </a> </li>
+                                             <li><a href="/Files/Delete/@item.File.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete File </a> </li>
                                              <li role="separator" class="divider"></li>
-                                             <li><a href="~/UserFiles/@item.FileUrl"><span class="fa fa-download"></span> Download File </a> </li>
+                                             <li><a href="~/UserFiles/@item.File.FileUrl"><span class="fa fa-download"></span> Download File </a> </li>
                                         </ul>
                                    </div>
                               </td>
                               <td>
                                    <strong>
-                                        @item.Name
+                                        @item.File.Name
                                    </strong>
                               </td>
                               <td>
                                    @item.AppUser.Firstname @item.AppUser.Lastname
                               </td>
                               <td>
-                                   @item.Downloads.Count
+                                   @item.File.Downloads.Count
                               </td>
                               <td>
-                                   @item.Histories.Count
+                                   @item.File.Histories.Count
                               </td>
                          </tr>
                     }

@@ -1,4 +1,5 @@
 ﻿using FileManager.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace FileManager.Web.Controllers
 {
+     [Authorize]
      public class DownloadsController : Controller
      {
           AppDbContext db = new AppDbContext();
@@ -17,6 +19,8 @@ namespace FileManager.Web.Controllers
           {
                return View(await db.Downloads.Where(e => e.AppUser.UserName.Equals(User.Identity.Name)).ToListAsync());
           }
+
+
 
           protected override void Dispose(bool disposing)
           {

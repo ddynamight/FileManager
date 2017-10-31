@@ -226,6 +226,22 @@ section #dashboardCon .container-fluid div[class*=col-] div#salesTickerCon h2 {
     width: 100%;
 }
 
+section #dashboardCon .container-fluid div[class*=col-] div#salesTickerCon ul {
+    clear: both;
+    display: block;
+    font-size: 1.25em;
+    list-style: none;
+    padding: 1em 0.5em;
+    width: 100%;
+}
+
+section #dashboardCon .container-fluid div[class*=col-] div#salesTickerCon ul li {
+    clear: both;
+    color: rgba(255, 127, 14, 1);
+    display: block;
+    width: 100%;
+}
+
 
 /*section #dashboardCon .container-fluid div[class*=col-] div#productTickerCon:value {
     content: "\E453";

@@ -31,6 +31,7 @@ namespace FileManager.Model
           public virtual DbSet<File> Files { get; set; }
           public virtual DbSet<History> Histories { get; set; }
           public virtual DbSet<Notification> Notifications { get; set; }
+          public virtual DbSet<UserFile> UserFiles { get; set; }
 
           protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
           {
@@ -47,6 +48,7 @@ namespace FileManager.Model
                builder.Entity<IdentityRoleClaim<string>>().HasKey(e => e.Id);
                builder.Entity<IdentityUserClaim<string>>().HasKey(e => e.Id);
                builder.Entity<IdentityUserToken<string>>().HasKey(e => e.UserId);
+               builder.Entity<UserFile>().HasKey(e => new { e.AppUserId, e.FileId });
 
                // ToTable Property Configuration
                builder.Entity<IdentityUserLogin<string>>().ToTable("AspNetUserLogin");
@@ -65,9 +67,9 @@ namespace FileManager.Model
                    .HasForeignKey(d => d.AppUserId);
 
                builder.Entity<AppUser>()
-                   .HasMany<File>(a => a.Files)
-                   .WithOne(f => f.AppUser)
-                   .HasForeignKey(f => f.AppUserId);
+                   .HasMany<UserFile>(a => a.UserFiles)
+                   .WithOne(uf => uf.AppUser)
+                   .HasForeignKey(uf => uf.AppUserId);
 
                builder.Entity<AppUser>()
                    .HasMany<History>(a => a.Histories)
@@ -88,6 +90,11 @@ namespace FileManager.Model
                    .HasMany<History>(f => f.Histories)
                    .WithOne(h => h.File)
                    .HasForeignKey(h => h.FileId);
+
+               builder.Entity<File>()
+                   .HasMany<UserFile>(f => f.UserFiles)
+                   .WithOne(uf => uf.File)
+                   .HasForeignKey(uf => uf.FileId);
           }
      }
 }

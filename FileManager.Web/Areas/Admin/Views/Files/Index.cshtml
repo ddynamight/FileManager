@@ -1,4 +1,4 @@
-﻿@model IEnumerable<FileManager.Model.File>
+﻿@model IEnumerable<FileManager.Model.UserFile>
 
 @{
      ViewBag.Title = "Files";
@@ -61,7 +61,7 @@
                     </tr>
                </thead>
                <tbody>
-                    @foreach (var item in Model.OrderBy(e => e.Name).ThenByDescending(e => e.Date))
+                    @foreach (var item in Model.OrderBy(e => e.File.Name).ThenByDescending(e => e.File.Date))
                {
                          <tr>
                               <td>
@@ -72,29 +72,29 @@
                                              <span class="sr-only">Toggle Dropdown</span>
                                         </button>
                                         <ul class="dropdown-menu">
-                                             <li><a href="/Admin/Files/Details/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> View Records </a> </li>
+                                             <li><a href="/Admin/Files/Details/@item.File.Tagname"><span class="glyphicons glyphicons-edit"></span> View Records </a> </li>
                                              <li role="separator" class="divider"></li>
-                                             <li><a href="/Admin/Files/Edit/@item.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Records </a> </li>
+                                             <li><a href="/Admin/Files/Edit/@item.File.Tagname"><span class="glyphicons glyphicons-edit"></span> Edit Records </a> </li>
                                              <li role="separator" class="divider"></li>
-                                             <li><a href="/Admin/Files/Delete/@item.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete File </a> </li>
+                                             <li><a href="/Admin/Files/Delete/@item.File.Tagname"><span class="glyphicons glyphicons-bin"></span> Delete File </a> </li>
                                              <li role="separator" class="divider"></li>
-                                             <li><a href="~/UserFiles/@item.FileUrl"><span class="fa fa-download"></span> Download File </a> </li>
+                                             <li><a href="~/UserFiles/@item.File.FileUrl"><span class="fa fa-download"></span> Download File </a> </li>
                                         </ul>
                                    </div>
                               </td>
                               <td>
                                    <strong>
-                                        @item.Name
+                                        @item.File.Name
                                    </strong>
                               </td>
                               <td>
                                    @item.AppUser.Lastname @item.AppUser.Firstname
                               </td>
                               <td>
-                                   @item.Downloads.Count
+                                   @item.File.Downloads.Count
                               </td>
                               <td>
-                                   @item.Histories.Count
+                                   @item.File.Histories.Count
                               </td>
                          </tr>
                     }

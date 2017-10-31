@@ -90,8 +90,6 @@ namespace FileManager.Model.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("AppUserId");
-
                     b.Property<DateTime>("Date");
 
                     b.Property<string>("FileUrl");
@@ -103,8 +101,6 @@ namespace FileManager.Model.Migrations
                     b.Property<string>("Tagname");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AppUserId");
 
                     b.ToTable("Files");
                 });
@@ -131,6 +127,41 @@ namespace FileManager.Model.Migrations
                     b.HasIndex("FileId");
 
                     b.ToTable("Histories");
+                });
+
+            modelBuilder.Entity("FileManager.Model.Notification", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Action");
+
+                    b.Property<string>("AppUserId");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<bool>("IsRead");
+
+                    b.Property<string>("Message");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AppUserId");
+
+                    b.ToTable("Notifications");
+                });
+
+            modelBuilder.Entity("FileManager.Model.UserFile", b =>
+                {
+                    b.Property<string>("AppUserId");
+
+                    b.Property<int>("FileId");
+
+                    b.HasKey("AppUserId", "FileId");
+
+                    b.HasIndex("FileId");
+
+                    b.ToTable("UserFiles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<string>", b =>
@@ -251,13 +282,6 @@ namespace FileManager.Model.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("FileManager.Model.File", b =>
-                {
-                    b.HasOne("FileManager.Model.AppUser", "AppUser")
-                        .WithMany("Files")
-                        .HasForeignKey("AppUserId");
-                });
-
             modelBuilder.Entity("FileManager.Model.History", b =>
                 {
                     b.HasOne("FileManager.Model.AppUser", "AppUser")
@@ -266,6 +290,26 @@ namespace FileManager.Model.Migrations
 
                     b.HasOne("FileManager.Model.File", "File")
                         .WithMany("Histories")
+                        .HasForeignKey("FileId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("FileManager.Model.Notification", b =>
+                {
+                    b.HasOne("FileManager.Model.AppUser", "AppUser")
+                        .WithMany("Notifications")
+                        .HasForeignKey("AppUserId");
+                });
+
+            modelBuilder.Entity("FileManager.Model.UserFile", b =>
+                {
+                    b.HasOne("FileManager.Model.AppUser", "AppUser")
+                        .WithMany("UserFiles")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("FileManager.Model.File", "File")
+                        .WithMany("UserFiles")
                         .HasForeignKey("FileId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

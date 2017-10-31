@@ -94,14 +94,25 @@ GO
 
 CREATE TABLE [Files] (
     [Id] int NOT NULL IDENTITY,
-    [AppUserId] nvarchar(450) NULL,
     [Date] datetime2 NOT NULL,
     [FileUrl] nvarchar(max) NULL,
     [IsLocked] bit NOT NULL,
     [Name] nvarchar(max) NULL,
     [Tagname] nvarchar(max) NULL,
-    CONSTRAINT [PK_Files] PRIMARY KEY ([Id]),
-    CONSTRAINT [FK_Files_AppUser_AppUserId] FOREIGN KEY ([AppUserId]) REFERENCES [AppUser] ([Id]) ON DELETE NO ACTION
+    CONSTRAINT [PK_Files] PRIMARY KEY ([Id])
+);
+
+GO
+
+CREATE TABLE [Notifications] (
+    [Id] int NOT NULL IDENTITY,
+    [Action] nvarchar(max) NULL,
+    [AppUserId] nvarchar(450) NULL,
+    [Date] datetime2 NOT NULL,
+    [IsRead] bit NOT NULL,
+    [Message] nvarchar(max) NULL,
+    CONSTRAINT [PK_Notifications] PRIMARY KEY ([Id]),
+    CONSTRAINT [FK_Notifications_AppUser_AppUserId] FOREIGN KEY ([AppUserId]) REFERENCES [AppUser] ([Id]) ON DELETE NO ACTION
 );
 
 GO
@@ -132,15 +143,21 @@ CREATE TABLE [Histories] (
 
 GO
 
+CREATE TABLE [UserFiles] (
+    [AppUserId] nvarchar(450) NOT NULL,
+    [FileId] int NOT NULL,
+    CONSTRAINT [PK_UserFiles] PRIMARY KEY ([AppUserId], [FileId]),
+    CONSTRAINT [FK_UserFiles_AppUser_AppUserId] FOREIGN KEY ([AppUserId]) REFERENCES [AppUser] ([Id]) ON DELETE CASCADE,
+    CONSTRAINT [FK_UserFiles_Files_FileId] FOREIGN KEY ([FileId]) REFERENCES [Files] ([Id]) ON DELETE CASCADE
+);
+
+GO
+
 CREATE INDEX [IX_Downloads_AppUserId] ON [Downloads] ([AppUserId]);
 
 GO
 
 CREATE INDEX [IX_Downloads_FileId] ON [Downloads] ([FileId]);
-
-GO
-
-CREATE INDEX [IX_Files_AppUserId] ON [Files] ([AppUserId]);
 
 GO
 
@@ -152,8 +169,16 @@ CREATE INDEX [IX_Histories_FileId] ON [Histories] ([FileId]);
 
 GO
 
+CREATE INDEX [IX_Notifications_AppUserId] ON [Notifications] ([AppUserId]);
+
+GO
+
+CREATE INDEX [IX_UserFiles_FileId] ON [UserFiles] ([FileId]);
+
+GO
+
 INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-VALUES (N'20171026140545_InitialCreate', N'2.0.0-rtm-26452');
+VALUES (N'20171029105325_InitialCreate', N'2.0.0-rtm-26452');
 
 GO
 
